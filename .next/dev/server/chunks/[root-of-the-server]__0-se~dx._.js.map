@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HP/Downloads/create-shopify-digital-store/src/app/api/auth/me/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\n\nexport async function GET(request: Request) {\n  try {\n    const cookie = request.headers.get(\"cookie\") || \"\";\n    const sessionMatch = cookie.match(/session=([^;]+)/);\n    if (!sessionMatch) {\n      return NextResponse.json({ user: null });\n    }\n\n    const session = JSON.parse(decodeURIComponent(sessionMatch[1]));\n    return NextResponse.json({ user: session });\n  } catch {\n    return NextResponse.json({ user: null });\n  }\n}\n"],"names":["GET","request","cookie","headers","get","sessionMatch","match","json","user","session","JSON","parse","decodeURIComponent"],"mappings":";;;;AAAA;;AAEO,eAAeA,IAAIC,OAAgB;IACxC,IAAI;QACF,MAAMC,SAASD,QAAQE,OAAO,CAACC,GAAG,CAAC,aAAa;QAChD,MAAMC,eAAeH,OAAOI,KAAK,CAAC;QAClC,IAAI,CAACD,cAAc;YACjB,OAAO,gJAAY,CAACE,IAAI,CAAC;gBAAEC,MAAM;YAAK;QACxC;QAEA,MAAMC,UAAUC,KAAKC,KAAK,CAACC,mBAAmBP,YAAY,CAAC,EAAE;QAC7D,OAAO,gJAAY,CAACE,IAAI,CAAC;YAAEC,MAAMC;QAAQ;IAC3C,EAAE,OAAM;QACN,OAAO,gJAAY,CAACF,IAAI,CAAC;YAAEC,MAAM;QAAK;IACxC;AACF"}}]
+}
